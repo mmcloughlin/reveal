@@ -20,12 +20,12 @@ slides/%-0.png: %.pdf
 	convert -density 150 -antialias $< -resize 1024x -quality 90 "slides/$*.png"
 
 %.imgur: %.png
-	imgur -a=true $< > $@
+	imgur -a=true $< | tr -d '\n' > $@
 
 %.md: %.md.j2
 	j2 $< > $@
 
-README.md: $(foreach slide,2 3 4,slides/example-$(slide).imgur)
+README.md: $(foreach slide,1 2 3,slides/example-$(slide).imgur)
 
 clean:
 	$(RM) *.pdf syntax.tex samples/*.tex

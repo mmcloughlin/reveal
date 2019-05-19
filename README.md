@@ -5,8 +5,7 @@ Reveal source code line-by-line in LaTeX presentations.
 
 
 
-<p align="center"><img src="https://i.imgur.com/g2YDfZs.png
-" width="80%" /></p>
+<p align="center"><img src="https://i.imgur.com/T681s9F.png" width="80%" /></p>
 
 ## Install
 
@@ -63,12 +62,9 @@ We can include this code in our slides with
 \reveal{samples/hello.go}
 ```
 
-<p align="center"><img src="https://i.imgur.com/g2YDfZs.png
-" width="80%" /></p>
-<p align="center"><img src="https://i.imgur.com/qCP10sJ.png
-" width="80%" /></p>
-<p align="center"><img src="https://i.imgur.com/Ahdafzi.png
-" width="80%" /></p>
+<p align="center"><img src="https://i.imgur.com/dp1BXLt.png" width="80%" /></p>
+<p align="center"><img src="https://i.imgur.com/T681s9F.png" width="80%" /></p>
+<p align="center"><img src="https://i.imgur.com/gcQjCEg.png" width="80%" /></p>
 
 ### Snippets
 
