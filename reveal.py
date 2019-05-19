@@ -87,12 +87,12 @@ class Source:
         return names
 
     @classmethod
-    def parse(cls, src):
+    def parse(cls, src, comment_chars='//'):
         """
         Parse source code with reveal comments.
         """
         lines = src.splitlines()
-        directive_pattern = r'^(.*?)\s*//r\s+(.*)$'
+        directive_pattern = r'^(.*?)\s*' + comment_chars + 'r\s+(.*)$'
         result = []
         for i, line in enumerate(lines):
             match = re.match(directive_pattern, line)
@@ -157,7 +157,7 @@ def command_generate(args):
         args.lexer) if args.lexer else get_lexer_for_filename(filename)
     src = args.input.read()
 
-    s = Source.parse(src)
+    s = Source.parse(src, comment_chars=args.comment_chars)
 
     formatter = build_formatter(args)
     highlighted = highlight(s.code, lexer, formatter)
@@ -199,6 +199,8 @@ def main():
     parser_generate = subparsers.add_parser(
         "generate", help="generate highlighted source code")
     parser_generate.add_argument('--lexer', help='lexer type')
+    parser_generate.add_argument(
+        '--comment-chars', default='//', help='comment characters')
     parser_generate.add_argument(
         '--input', type=argparse.FileType('r'), default=sys.stdin, help='input file')
     parser_generate.add_argument(

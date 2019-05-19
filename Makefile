@@ -1,19 +1,27 @@
-style=paraiso-dark
 samples=$(wildcard samples/*.go)
 revealed=$(patsubst %.go,%-default.tex,$(samples))
 
 all: example.pdf logo.pdf
 
-example.pdf logo.pdf: syntax.tex $(revealed)
+example.pdf: style-paraiso-dark.tex $(revealed)
+
+logo.pdf: style-paraiso-light.tex samples/logo-default.tex
+
+# maybe: paraiso-light solarized-light
+# no: colorful autumn
+
 
 %.pdf: %.tex
 	xelatex $*
 
-syntax.tex: reveal.py
-	./$< --style $(style) style --output $@
+style-%.tex: reveal.py
+	./$< --style $* style --output $@
 
 %-default.tex: reveal.py %.go
-	./$< --style $(style) generate --input $*.go
+	./$< generate --input $*.go
+
+%-default.tex: reveal.py %.tex
+	./$< generate --input $*.tex --comment-chars '%'
 
 slides/%-0.png: %.pdf
 	mkdir -p slides
