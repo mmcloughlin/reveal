@@ -12,9 +12,7 @@ Reveal source code line-by-line in LaTeX presentations.
 * Copy [`reveal.py`](reveal.py) and [`reveal.tex`](reveal.tex) into your project.
 * Make sure you have [pygments](http://pygments.org/) installed with `pip install Pygments`.
 
-## Getting Started
-
-### Setup
+## Setup
 
 Generate yourself style macros with
 
@@ -32,7 +30,7 @@ Include the syntax macros and `reveal` headers in your LaTeX document with
 \input{syntax.tex}
 ```
 
-### Including Source Code
+## Including Source Code
 
 Reveal understands special comments in source code at the end of each line,
 starting with the prefix `//r`. The following example shows a "Hello World"
@@ -56,17 +54,29 @@ This markup specifies:
 * The `fmt.Println` line will be highlighted in stage 3.
 * These lines also have inline comments specified for stages 2 and 3.
 
-We can include this code in our slides with
+To process this into LaTeX we use
+
+```
+./reveal.py generate --input samples/hello.go
+```
+
+Now include this code in slides with
 
 ```tex
 \reveal{samples/hello.go}
 ```
 
+The result is the following three slides.
+
 <p align="center"><img src="https://i.imgur.com/dp1BXLt.png" width="80%" /></p>
 <p align="center"><img src="https://i.imgur.com/T681s9F.png" width="80%" /></p>
 <p align="center"><img src="https://i.imgur.com/gcQjCEg.png" width="80%" /></p>
 
-### Snippets
+## Snippets
+
+It can sometimes be useful to present pieces of a larger file. `reveal`
+supports this through \emph{snippets}. In a `reveal` comment an uppercase word
+is interpreted as a snippet name. For example the following code has three snippets `TYPE`, `WRITETO` and `MAIN`.
 
 ```go
 package main
@@ -103,3 +113,15 @@ func main() { //r MAIN
 } //r MAIN
 
 ```
+
+Snippets can then be included by name.
+
+```tex
+\revealsnippet{samples/greet.go}{main}
+```
+
+This produces frames:
+
+<p align="center"><img src="https://i.imgur.com/HaiCojX.png" width="80%" /></p>
+<p align="center"><img src="https://i.imgur.com/UBPQRo3.png" width="80%" /></p>
+<p align="center"><img src="https://i.imgur.com/Fksr2vf.png" width="80%" /></p>
