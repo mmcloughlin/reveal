@@ -14,11 +14,14 @@ import re
 import os.path
 import shlex
 
-
+# Line represents an annotated line of source code.
 Line = collections.namedtuple('Line', ['n', 'content', 'params'])
 
 
 def prefixed_params(params, prefix):
+    """
+
+    """
     values = {}
     for k, v in params.items():
         if not k.startswith(prefix + ':'):
@@ -28,10 +31,14 @@ def prefixed_params(params, prefix):
     return values
 
 
+# Snippet name if not specified.
 DEFAULT_SNIPPET = 'DEFAULT'
 
 
 def parse_params(s):
+    """
+    Parse parameters from a reveal comment.
+    """
     snippet_name = DEFAULT_SNIPPET
     snippet_params = {}
     for part in shlex.split(s):
@@ -46,21 +53,34 @@ def parse_params(s):
 
 
 def is_snippet_marker(s):
+    """
+    Returns whether a word is a snippet token.
+    """
     return s.upper() == s
 
 
 class Source:
+    """
+    Source represents reveal-annoted source code.
+    """
+
     def __init__(self, lines):
         self.lines = lines
 
     @property
     def code(self):
+        """
+        The original source code without reveal comments.
+        """
         c = ''
         for l in self.lines:
             c += l.content + '\n'
         return c
 
     def snippet_names(self):
+        """
+        All snippet names which occur in the source code.
+        """
         names = set()
         for line in self.lines:
             names.update(line.params.keys())
@@ -68,6 +88,9 @@ class Source:
 
     @classmethod
     def parse(cls, src):
+        """
+        Parse source code with reveal comments.
+        """
         lines = src.splitlines()
         directive_pattern = r'^(.*?)\s*//r\s+(.*)$'
         result = []
@@ -100,11 +123,10 @@ class Source:
         return cls(lines=result)
 
 
-def build_formatter(args):
-    return LatexFormatter(style=args.style)
-
-
 def format_line(line, params):
+    """
+    Format a line of source code according to parameters.
+    """
     slide = params['stage']
     content = line.replace('\t', ' '*4)
     line = '\\uncover<{slide}>{{{content}'.format(
@@ -119,6 +141,13 @@ def format_line(line, params):
 
     line += '}'
     return line
+
+
+def build_formatter(args):
+    """
+    Construct the formatter according to provided arguments.
+    """
+    return LatexFormatter(style=args.style)
 
 
 def command_generate(args):
