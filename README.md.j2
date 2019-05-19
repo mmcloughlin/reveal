@@ -1,5 +1,5 @@
-# reveal
-Reveal source code line-by-line in LaTeX presentations.
+<p align="center"><img src="logo.png" border="0" alt="reveal" /></p>
+<p align="center">Reveal source code line-by-line in LaTeX presentations.</p>
 
 {% macro slide(name, num) -%}
 <p align="center"><img src="{% include 'slides/' + name + '-' + num + '.imgur' %}" /></p>
@@ -10,8 +10,6 @@ Reveal source code line-by-line in LaTeX presentations.
 {% include name %}
 ```
 {%- endmacro %}
-
-{{ slide("example", "2") }}
 
 ## Install
 

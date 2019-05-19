@@ -2,9 +2,9 @@ style=paraiso-dark
 samples=$(wildcard samples/*.go)
 revealed=$(patsubst %.go,%-default.tex,$(samples))
 
-all: example.pdf
+all: example.pdf logo.pdf
 
-example.pdf: syntax.tex $(revealed)
+example.pdf logo.pdf: syntax.tex $(revealed)
 
 %.pdf: %.tex
 	xelatex $*
@@ -22,10 +22,13 @@ slides/%-0.png: %.pdf
 %.imgur: %.png
 	imgur -a=true $< | tr -d '\n' > $@
 
+logo.png: slides/logo-0.png
+	cp slides/logo-1.png $@
+
 %.md: %.md.j2
 	j2 $< > $@
 
-README.md: $(foreach slide,0 1 2 3 10 11 12,slides/example-$(slide).imgur)
+README.md: logo.png $(foreach slide,0 1 2 3 10 11 12,slides/example-$(slide).imgur)
 
 clean:
 	$(RM) *.pdf syntax.tex samples/*.tex

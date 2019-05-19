@@ -1,0 +1,21 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{fontspec}
+
+\setmonofont{Source Code Pro}
+\setbeamercovered{transparent=20}
+\setbeamertemplate{navigation symbols}{}
+
+\input{reveal.tex}
+\input{syntax.tex}
+
+\begin{document}
+
+\begin{frame}[plain]
+  {
+    \fontsize{44}{44} \selectfont
+    \revealsnippet{samples/logo.go}{logo}
+  }
+\end{frame}
+
+\end{document}
