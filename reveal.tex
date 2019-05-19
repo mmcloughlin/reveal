@@ -1,4 +1,6 @@
+% Commands for displaying snippets.
 \newcommand{\reveal}[1]{\revealsnippet{#1}{default}}
 \newcommand{\revealsnippet}[2]{\input{#1-#2.tex}}
 
+% Command for displaying an inline comment. Redefine to customize.
 \newcommand{\revealinlinecomment}[1]{\hspace*{\fill}\linebreak[0]\hspace*{\fill}\guilsinglleft~#1}
