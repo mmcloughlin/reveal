@@ -1,8 +1,6 @@
-<p align="center">
-    <img src="logo.png" border="0" alt="reveal" />
-    <br />
-    Reveal source code line-by-line in LaTeX presentations.
-</p>
+<p align="center"><img src="logo.png" border="0" alt="reveal" /></p>
+
+<p align="center">Reveal source code line-by-line in LaTeX presentations.</p>
 
 
 
@@ -69,9 +67,9 @@ Now include this code in slides with
 
 The result is the following three slides.
 
-<p align="center"><img src="https://i.imgur.com/7bheSeN.png" /></p>
-<p align="center"><img src="https://i.imgur.com/wLX25CF.png" /></p>
-<p align="center"><img src="https://i.imgur.com/JFl1EkV.png" /></p>
+<p align="center"><img src="https://i.imgur.com/d0yGkf2.png" /></p>
+<p align="center"><img src="https://i.imgur.com/BP6zLF0.png" /></p>
+<p align="center"><img src="https://i.imgur.com/7czqPJU.png" /></p>
 
 ## Snippets
 
@@ -123,6 +121,6 @@ Snippets can then be included by name.
 
 This produces frames:
 
-<p align="center"><img src="https://i.imgur.com/SqSeLnF.png" /></p>
-<p align="center"><img src="https://i.imgur.com/RpYSi0c.png" /></p>
-<p align="center"><img src="https://i.imgur.com/FulaCUp.png" /></p>
+<p align="center"><img src="https://i.imgur.com/LRjyKCQ.png" /></p>
+<p align="center"><img src="https://i.imgur.com/XTNVAPH.png" /></p>
+<p align="center"><img src="https://i.imgur.com/nKyjt2p.png" /></p>
