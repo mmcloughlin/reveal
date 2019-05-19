@@ -1,0 +1,43 @@
+\documentclass[aspectratio=169,14pt]{beamer}
+
+\usetheme[
+  background=dark,
+  numbering=none,
+  sectionpage=progressbar,
+]{metropolis}
+
+% \setsansfont{Work Sans}
+\setmonofont{Source Code Pro}
+
+% \setbeamercolor{normal text}{%
+%   fg=black!5,
+%   bg=go-brand-bg
+% }
+% 
+% \setbeamercolor{standout}{
+%   fg=black,
+%   bg=black!5
+% }
+
+\setbeamercovered{transparent=40}
+
+% \setbeamerfont{frametitle}{size=\normalsize,series=\bfseries}
+
+\input{reveal.tex}
+\input{syntax.tex}
+
+\title{Source Code Slides with \texttt{reveal}}
+\date{\today}
+\author{Michael McLoughlin}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Hello World}
+
+\reveal{samples/hello.go}
+
+\end{frame}
+
+\end{document}

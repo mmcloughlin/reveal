@@ -1,0 +1,9 @@
+env
+*.toc
+*.aux
+*.log
+*.out
+*.nav
+*.snm
+samples/*.tex
+syntax.tex
