@@ -2,7 +2,7 @@
 Reveal source code line-by-line in LaTeX presentations.
 
 {% macro slide(name, num) -%}
-<p align="center"><img src="{% include 'slides/' + name + '-' + num + '.imgur' %}" width="80%" /></p>
+<p align="center"><img src="{% include 'slides/' + name + '-' + num + '.imgur' %}" /></p>
 {%- endmacro %}
 
 {% macro code(name, lang="go") -%}

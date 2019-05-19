@@ -17,7 +17,7 @@ syntax.tex: reveal.py
 
 slides/%-0.png: %.pdf
 	mkdir -p slides
-	convert -density 150 -antialias $< -resize 1024x -quality 90 "slides/$*.png"
+	convert -density 150 -antialias $< -resize 512x -quality 90 "slides/$*.png"
 
 %.imgur: %.png
 	imgur -a=true $< | tr -d '\n' > $@
@@ -25,7 +25,7 @@ slides/%-0.png: %.pdf
 %.md: %.md.j2
 	j2 $< > $@
 
-README.md: $(foreach slide,1 2 3 10 11 12,slides/example-$(slide).imgur)
+README.md: $(foreach slide,0 1 2 3 10 11 12,slides/example-$(slide).imgur)
 
 clean:
 	$(RM) *.pdf syntax.tex samples/*.tex
