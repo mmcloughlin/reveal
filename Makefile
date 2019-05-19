@@ -15,7 +15,23 @@ syntax.tex: reveal.py
 %-default.tex: reveal.py %.go
 	./$< --style $(style) generate --input $*.go
 
+slides/%-0.png: %.pdf
+	mkdir -p slides
+	convert -density 150 -antialias $< -resize 1024x -quality 90 "slides/$*.png"
+
+%.imgur: %.png
+	imgur -a=true $< > $@
+
+%.md: %.md.j2
+	j2 $< > $@
+
+README.md: $(foreach slide,2 3 4,slides/example-$(slide).imgur)
+
 clean:
 	$(RM) *.pdf syntax.tex samples/*.tex
 
-.PHONY: all clean
+tools:
+	go get -u github.com/mattn/imgur
+	pip install j2cli
+
+.PHONY: all clean tools

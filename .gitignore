@@ -7,3 +7,4 @@ env
 *.snm
 samples/*.tex
 syntax.tex
+slides

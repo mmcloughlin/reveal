@@ -1,0 +1,68 @@
+# reveal
+Reveal source code line-by-line in LaTeX presentations.
+
+{% macro slide(name, num) -%}
+<p align="center"><img src="{% include 'slides/' + name + '-' + num + '.imgur' %}" width="80%" /></p>
+{%- endmacro %}
+
+{% macro code(name, lang="go") -%}
+```{{ lang }}
+{% include name %}
+```
+{%- endmacro %}
+
+{{ slide("example", "2") }}
+
+## Install
+
+* Copy [`reveal.py`](reveal.py) and [`reveal.tex`](reveal.tex) into your project.
+* Make sure you have [pygments](http://pygments.org/) installed with `pip install Pygments`.
+
+## Getting Started
+
+### Setup
+
+Generate yourself style macros with
+
+```
+./reveal.py --style paraiso-dark style --output syntax.tex
+```
+
+Here we've chosen the `paraiso-dark` style, but you can choose anything
+supported by pygments. See `pygmentize -L styles` for the full list.
+
+Include the syntax macros and `reveal` headers in your LaTeX document with
+
+```tex
+\input{reveal.tex}
+\input{syntax.tex}
+```
+
+### Including Source Code
+
+Reveal understands special comments in source code at the end of each line,
+starting with the prefix `//r`. The following example shows a "Hello World"
+program in Go with reveal markup.
+
+{{ code("samples/hello.go") }}
+
+This markup specifies:
+
+* There are three _stages_. The first is implicit, and displays all lines.
+* The `import` line will be highlighted in stage 2.
+* The `fmt.Println` line will be highlighted in stage 3.
+* These lines also have inline comments specified for stages 2 and 3.
+
+We can include this code in our slides with
+
+```tex
+\reveal{samples/hello.go}
+```
+
+{{ slide("example", "2") }}
+{{ slide("example", "3") }}
+{{ slide("example", "4") }}
+
+### Snippets
+
+{{ code("samples/greet.go") }}
