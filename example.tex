@@ -36,8 +36,43 @@
 
 \begin{frame}{Hello World}
 
-\reveal{samples/hello.go}
+  \reveal{samples/hello.go}
 
 \end{frame}
+
+\begin{frame}[standout]
+  Is this \emph{generic} enough?
+\end{frame}
+
+\begin{frame}{The \texttt{Greeting} type}
+
+  \revealsnippet{samples/greet.go}{type}
+
+\end{frame}
+
+\begin{frame}{Writing Greetings}
+
+  \uncover<1>{We implement the \texttt{io.WriterTo} interface.}
+
+  \begin{small}
+    \revealsnippet{samples/greet.go}{writeto}
+  \end{small}
+
+\end{frame}
+
+\begin{frame}{\texttt{main}, reimagined}
+
+  \begin{small}
+    \revealsnippet{samples/greet.go}{main}
+  \end{small}
+
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+  {\large \url{https://github.com/mmcloughlin/reveal}}
+  \end{center}
+\end{frame}
+
 
 \end{document}

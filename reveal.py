@@ -126,7 +126,6 @@ def command_generate(args):
     output_template = args.output_template or filename + "-SNIPPET.tex"
     lexer = get_lexer_by_name(
         args.lexer) if args.lexer else get_lexer_for_filename(filename)
-    print(lexer)
     src = args.input.read()
 
     s = Source.parse(src)
