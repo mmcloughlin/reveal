@@ -5,11 +5,7 @@ all: example.pdf logo.pdf
 
 example.pdf: style-paraiso-dark.tex $(revealed)
 
-logo.pdf: style-paraiso-light.tex samples/logo-default.tex
-
-# maybe: paraiso-light solarized-light
-# no: colorful autumn
-
+logo.pdf: style-tango.tex samples/logo-default.tex
 
 %.pdf: %.tex
 	xelatex $*
@@ -31,7 +27,7 @@ slides/%-0.png: %.pdf
 	imgur -a=true $< | tr -d '\n' > $@
 
 logo.png: slides/logo-0.png
-	cp slides/logo-1.png $@
+	convert slides/logo-1.png -trim $@
 
 %.md: %.md.j2
 	j2 $< > $@
