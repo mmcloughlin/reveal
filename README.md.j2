@@ -1,6 +1,6 @@
 <p align="center"><img src="logo.png" border="0" alt="reveal" /></p>
 
-<p align="center">Reveal source code line-by-line in LaTeX presentations.</p>
+<p align="center">Reveal source code line-by-line in LaTeX presentations</p>
 
 {% macro slide(name, num) -%}
 <p align="center"><img src="{% include 'slides/' + name + '-' + num + '.imgur' %}" /></p>
@@ -11,6 +11,14 @@
 {% include name %}
 ```
 {%- endmacro %}
+
+* **Beautiful syntax highlighting** with [Pygments](http://pygments.org/)
+* **Present code with clarity** by drawing attention to important lines
+* **Ensure correctness**: Reveal directives are comments so your code is executable
+
+Have a look at the [Example Presentation](example.pdf) and see for yourself!
+
+{{ slide("example", "6") }}
 
 ## Install
 

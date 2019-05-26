@@ -1,10 +1,18 @@
 <p align="center"><img src="logo.png" border="0" alt="reveal" /></p>
 
-<p align="center">Reveal source code line-by-line in LaTeX presentations.</p>
+<p align="center">Reveal source code line-by-line in LaTeX presentations</p>
 
 
 
 
+
+* **Beautiful syntax highlighting** with [Pygments](http://pygments.org/)
+* **Present code with clarity** by drawing attention to important lines
+* **Ensure correctness**: Reveal directives are comments so your code is executable
+
+Have a look at the [Example Presentation](example.pdf) and see for yourself!
+
+<p align="center"><img src="https://i.imgur.com/uFBrToA.png" /></p>
 
 ## Install
 
@@ -67,9 +75,9 @@ Now include this code in slides with
 
 The result is the following three slides.
 
-<p align="center"><img src="https://i.imgur.com/d0yGkf2.png" /></p>
-<p align="center"><img src="https://i.imgur.com/BP6zLF0.png" /></p>
-<p align="center"><img src="https://i.imgur.com/7czqPJU.png" /></p>
+<p align="center"><img src="https://i.imgur.com/z0bm8gF.png" /></p>
+<p align="center"><img src="https://i.imgur.com/APUMNWL.png" /></p>
+<p align="center"><img src="https://i.imgur.com/JAb8rbV.png" /></p>
 
 ## Snippets
 
@@ -121,6 +129,6 @@ Snippets can then be included by name.
 
 This produces frames:
 
-<p align="center"><img src="https://i.imgur.com/LRjyKCQ.png" /></p>
-<p align="center"><img src="https://i.imgur.com/XTNVAPH.png" /></p>
-<p align="center"><img src="https://i.imgur.com/nKyjt2p.png" /></p>
+<p align="center"><img src="https://i.imgur.com/jzXXQZ7.png" /></p>
+<p align="center"><img src="https://i.imgur.com/l9EG231.png" /></p>
+<p align="center"><img src="https://i.imgur.com/buRBW6c.png" /></p>

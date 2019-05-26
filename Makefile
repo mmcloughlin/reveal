@@ -32,7 +32,7 @@ logo.png: slides/logo-0.png
 %.md: %.md.j2
 	j2 $< > $@
 
-README.md: $(foreach slide,0 1 2 3 10 11 12,slides/example-$(slide).imgur)
+README.md: $(foreach slide,0 1 2 3 6 10 11 12,slides/example-$(slide).imgur)
 
 clean:
 	$(RM) *.pdf syntax.tex samples/*.tex
