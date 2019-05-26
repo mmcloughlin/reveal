@@ -6,13 +6,15 @@
 
 
 
-* **Beautiful syntax highlighting** with [Pygments](http://pygments.org/)
-* **Present code with clarity** by drawing attention to important lines
-* **Ensure correctness**: Reveal directives are comments so your code is executable
+Reveal helps you present code with clarity by drawing attention to important lines.
 
-Have a look at the [Example Presentation](example.pdf) and see for yourself!
+* Beautiful syntax highlighting with [Pygments](http://pygments.org/)
+* Ensure correctness: Reveal directives are comments so your code is still executable
+* Present manageable snippets: Reveal allows you to define snippets within a larger file
 
-<p align="center"><img src="https://i.imgur.com/uFBrToA.png" /></p>
+Have a look at the [example presentation](example.pdf) and see for yourself!
+
+<p align="center"><img src="https://i.imgur.com/qAtPONY.png" /></p>
 
 ## Install
 
@@ -75,9 +77,9 @@ Now include this code in slides with
 
 The result is the following three slides.
 
-<p align="center"><img src="https://i.imgur.com/z0bm8gF.png" /></p>
-<p align="center"><img src="https://i.imgur.com/APUMNWL.png" /></p>
-<p align="center"><img src="https://i.imgur.com/JAb8rbV.png" /></p>
+<p align="center"><img src="https://i.imgur.com/v118Z6z.png" /></p>
+<p align="center"><img src="https://i.imgur.com/rU4dm75.png" /></p>
+<p align="center"><img src="https://i.imgur.com/m1cG7Kt.png" /></p>
 
 ## Snippets
 
@@ -129,6 +131,6 @@ Snippets can then be included by name.
 
 This produces frames:
 
-<p align="center"><img src="https://i.imgur.com/jzXXQZ7.png" /></p>
-<p align="center"><img src="https://i.imgur.com/l9EG231.png" /></p>
-<p align="center"><img src="https://i.imgur.com/buRBW6c.png" /></p>
+<p align="center"><img src="https://i.imgur.com/gZfSKpf.png" /></p>
+<p align="center"><img src="https://i.imgur.com/4Goz5SV.png" /></p>
+<p align="center"><img src="https://i.imgur.com/9jZy9Lr.png" /></p>
